@@ -11,5 +11,5 @@ Differences between Requirements.txt and Setup.py:
   - Setup: Metadata specifications for the program. Defines how the program is going to be packaged and distributed. Intended for sharing files, as well as telling computer what packages are needed to install
 
 To run:
-1. Create an image by typing 'docker built -t nameOfMyImage'
+1. Create an image by typing 'docker build -t nameOfMyImage .'
 2. Type 'docker run nameOfMyImage' should print out Hello World! in console
