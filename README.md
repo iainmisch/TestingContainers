@@ -1,15 +1,16 @@
-# Testing Containers
+# Printing EST Time
 
-testing making python containers using docker
+This code is a modification of the printing-OS code. In this branch, the program uses the 'datetime'
+package to get the time of the operating system in UTC. 
 
-This is simply to test if I can make a python container using docker
+Next, using a simple conversion, the program converts the UTC time into EST time, where this computer is based out of
 
-This branch uses a setup.py file when compiling
+Problems during development:
+1. Location, location, location: where the dockerfile is stored is very important, as well as the syntax of naming it. Ensure that the terminal line is at the same level of where 'Dockerfile' is stored. This caused a lot of time to be enveloped in testing different file locations and research
+2. Conversion from UTC to EST is simple, as there is a set time difference between the two. However, I wanted to avoid using magic numbers to subtract an arbitrary amount of time out of the UTC time. As a result, a bit of time was invested into finding different ways to calculate the offset
 
-Differences between Requirements.txt and Setup.py:
-  - Requirements: List of the pre-requisets needed in order to run the .py file. Lists the necessary packages and their versions, essentially **tells you what program needs to run**
-  - Setup: Metadata specifications for the program. Defines how the program is going to be packaged and distributed. Intended for sharing files, as well as telling computer what packages are needed to install
-
-To run:
-1. Create an image by typing 'docker build -t nameOfMyImage .'
-2. Type 'docker run nameOfMyImage' should print out Hello World! in console
+Running the dockerfile:
+1. Ensure that the Dockerfile is not buried deep, and that the command line is at the same level of the Dockerfile
+2. Type: 'docker build -t name-of-image .' (. implies creating the image at the same level as the command line)
+3. Once built, type: 'docker run name-of-image'
+4. Profit
